@@ -1,37 +1,59 @@
 function calculateResult() {
-    let answers = {
-      fireflies: 0,
-      fedra: 0,
-      hunters: 0,
-      survivors: 0
-    };
+  let resposta = {
+    fedra: 0,
+    fireflies: 0,
+    wlf: 0,
+    serafitas: 0,
+    rattlers: 0
+  };
 
-    // Conta as respostas do usuário
-    document.querySelectorAll('input[type="radio"]:checked').forEach((input) => {
-      answers[input.value]++;
-    });
+  // Conta as respostas do usuário
+  document.querySelectorAll('input[type="radio"]:checked').forEach((input) => {
+    resposta[input.value]++;
+  });
 
-    // Determina a facção com mais respostas
-    let maxScore = Math.max(...Object.values(answers));
-    let faction = Object.keys(answers).find(key => answers[key] === maxScore);
+  // Determina a facção com mais respostas
+  let maxScore = Math.max(...Object.values(resposta));
+  let faction = Object.keys(resposta).find(key => resposta[key] === maxScore);
 
-    let resultText = "";
-    switch(faction) {
-      case "fireflies":
-        resultText = "Você pertence aos Fireflies! Um rebelde que luta pela liberdade e um futuro melhor.";
-        break;
-      case "fedra":
-        resultText = "Você é da FEDRA! Busca manter ordem e segurança, mesmo que isso custe a liberdade.";
-        break;
-      case "hunters":
-        resultText = "Você é um Caçador! A sobrevivência é sua prioridade, e você faz o que for preciso.";
-        break;
-      case "survivors":
-        resultText = "Você é um Sobrevivente! A lealdade e a comunidade são fundamentais para você.";
-        break;
-      default:
-        resultText = "Parece que não há uma facção clara para você. Talvez você seja um solitário no apocalipse.";
-    }
+  let resultText = "";
+  let resultImageSrc = "";
+  switch(faction) {
+    
+    case "fedra":
+    resultText = "Você é da FEDRA! Busca manter ordem e segurança, mesmo que isso custe a liberdade.";
+    resultImageSrc = "/images/Fedra.png"; // Substitua pelo caminho da imagem dos Fireflies
+    break;
+    
+    case "fireflies":
+    resultText = "Você pertence aos Vagalumes! Um rebelde que luta pela liberdade e um futuro melhor.";
+    resultImageSrc = "/images/Vagalumes.png"; // Substitua pelo caminho da imagem da FEDRA
+    break;
+    
+    case "wlf":
+    resultText = "Você é um membro da W.L.F! A ordem é sua prioridade, e você faz o que for preciso.";
+    resultImageSrc = "/images/WLF.png"; // Substitua pelo caminho da imagem dos Caçadores
+    break;
+    
+    case "serafitas":
+    resultText = "Você é um Serafita! A lealdade e a comunidade são fundamentais para você.";
+    resultImageSrc = "/images/Seraphites.png"; // Substitua pelo caminho da imagem dos Sobreviventes
+    break;
+    
+    case "rattlers":
+    resultText = "Você é um Rattler! A lealdade e a comunidade são fundamentais para você.";
+    resultImageSrc = "/images/Rattlers.png"; // Substitua pelo caminho da imagem dos Sobreviventes
+    break;
 
-    document.getElementById("result").textContent = resultText;
+    default:
+      resultText = "Parece que não há uma facção clara para você. Talvez você seja um solitário no apocalipse.";
+      resultImageSrc = ""; // Caminho vazio se nenhuma facção correspondente for encontrada
   }
+
+  // Atualiza o conteúdo do resultado com o texto e a imagem
+  document.getElementById("result").textContent = resultText;
+  document.getElementById("resultImage").src = resultImageSrc;
+
+  // Exibe o contêiner do resultado
+  document.getElementById("resultContainer").style.display = "block";
+}

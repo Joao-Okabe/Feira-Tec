@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    font-size: large;
     background-image: url(fundo.jpg);
     color: #d1d1d6;
     padding: 20px;
@@ -11,8 +12,6 @@ body {
 h1 {
     color: #e63946;
 }
-
-
 
 label {
     font-weight: bold;
@@ -37,32 +36,36 @@ button:hover {
     background-color: #357ab7;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #e63946;
-    font-weight: bold;
-}
 
 .titulodiv{
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 15px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    width: 800px;
-    height: 150px;
     background-color: #2c2c2ec4;
-    margin: 0 auto;
+    padding: 25px;
+}
+
+.titulodivh{
+    font-family: "Rubik Wet Paint", system-ui;
 }
 
 .formQuiz {
     background-color: #2c2c2ec4;
-    padding: 50px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    width: 800px;
-    height: 550px;
-    margin: 0 auto;
     box-shadow: 10px;
+    padding: 25px;
  }
+
+ #resultContainer {
+    display: none;
+    background-color: #2c2c2ec4;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 10px;
+    padding: 25px;
+  }
+
+  #resultImage {
+    width: 100px;
+    height: 100px;
+  }
