@@ -1,12 +1,16 @@
 body {
     font-family: Arial, sans-serif;
     font-size: large;
-    background-image: url(fundo.jpg);
     color: #d1d1d6;
     padding: 20px;
-    background-image: url(/images/backgroundimage1.jpg);
+    background-image: url(images/backgroundimage1.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+label{
+    font-size: larger;
 }
 
 h1 {
@@ -56,16 +60,23 @@ button:hover {
     padding: 25px;
  }
 
- #resultContainer {
+ #resultContainer{
     display: none;
     background-color: #2c2c2ec4;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
     box-shadow: 10px;
-    padding: 25px;
+    text-align: center;
+    padding: 50px;
   }
 
-  #resultImage {
-    width: 100px;
-    height: 100px;
-  }
+#resultImage{
+    border-radius: 20px;
+    margin-bottom: 50px;
+    width: 472px;
+    height: 472px;
+}
+
+#textomargem{
+    height: 100%;
+    text-align: center;
+}
